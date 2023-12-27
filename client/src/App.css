@@ -1,0 +1,19 @@
+.add_btn{
+
+  text-align: right;
+ }
+.d-flex{
+
+  justify-content:space-evenly;
+  }
+  .container{
+    overflow: auto;
+}
+.c{
+  hover: blue;
+}
+.form-label{
+  font-size: larger;
+  font-weight: 700;
+
+}
