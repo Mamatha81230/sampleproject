@@ -23,11 +23,12 @@ const Register = () => {
 
   const Addinputdata = async (e) => {
     e.preventDefault();
-  
+
     const { sname, course, email, phoneNo, CGPA } = formData;
-  
+    let res; // Declare res here so that it's accessible outside the try block
+
     try {
-      const res = await fetch("/register", {
+      res = await fetch("/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,9 +41,9 @@ const Register = () => {
           CGPA,
         }),
       });
-  
+
       const data = await res.json();
-  
+
       if (!res.ok) {
         console.error("Error:", data);
         alert("All fields are mandatory");
@@ -54,12 +55,14 @@ const Register = () => {
     } catch (error) {
       console.error("Error:", error);
       alert("Error occurred. Check the console for details.");
-  
-      // Log the response text to the console
-      console.log("Response text:", await res.text());
+
+      // Check if res is defined before using it
+      if (res) {
+        // Log the response text to the console
+        console.log("Response text:", await res.text());
+      }
     }
   };
-  
 
   return (
     <div
@@ -79,7 +82,6 @@ const Register = () => {
           padding: '20px',
           borderRadius: '8px',
           width: '400px',
-          
         }}
       >
         <div className="mb-3">
