@@ -8,7 +8,7 @@ const Navbar = ({ someValueFromRedux, dispatch }) => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <strong>Home page </strong>
+            <strong>Home  </strong>
           </a>
         </div>
       </nav>
