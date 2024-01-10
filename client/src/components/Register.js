@@ -23,9 +23,9 @@ const Register = () => {
 
   const Addinputdata = async (e) => {
     e.preventDefault();
-
+  
     const { sname, course, email, phoneNo, CGPA } = formData;
-
+  
     try {
       const res = await fetch("/register", {
         method: "POST",
@@ -40,23 +40,26 @@ const Register = () => {
           CGPA,
         }),
       });
-
+  
       const data = await res.json();
-
+  
       if (!res.ok) {
         console.error("Error:", data);
         alert("All fields are mandatory");
       } else {
         alert("Data added successfully");
         navigate('/');
-        setUdata(data);
         console.log("Data added", data);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("All fields are mandatory");
+      alert("Error occurred. Check the console for details.");
+  
+      // Log the response text to the console
+      console.log("Response text:", await res.text());
     }
   };
+  
 
   return (
     <div
