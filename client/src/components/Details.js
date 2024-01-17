@@ -13,7 +13,7 @@ const Details = () => {
 
     const getdata = async () => {
         try {
-            const res = await fetch(`/getuser/${id}`, {
+            const res = await fetch(`https://student2app.azurewebsites.net/getuser/${id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

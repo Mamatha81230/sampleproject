@@ -28,7 +28,7 @@ const Register = () => {
     let res; // Declare res here so that it's accessible outside the try block
 
     try {
-      res = await fetch("/register", {
+      res = await fetch("https://student2app.azurewebsites.net/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -88,6 +88,7 @@ const Register = () => {
           <label className="form-label">Student Name</label>
           <input
             type="text"
+            
             name="sname"
             value={formData.sname}
             onChange={setdata}
@@ -98,6 +99,7 @@ const Register = () => {
           <label className="form-label">Course</label>
           <input
             type="text"
+            
             name="course"
             value={formData.course}
             onChange={setdata}
@@ -108,6 +110,7 @@ const Register = () => {
           <label className="form-label">Email</label>
           <input
             type="email"
+           
             name="email"
             value={formData.email}
             onChange={setdata}
@@ -118,6 +121,7 @@ const Register = () => {
           <label className="form-label">Phone Number</label>
           <input
             type="text"
+        
             name="phoneNo"
             value={formData.phoneNo}
             onChange={setdata}
@@ -128,6 +132,7 @@ const Register = () => {
           <label className="form-label">CGPA</label>
           <input
             type="text"
+          
             name="CGPA"
             value={formData.CGPA}
             onChange={setdata}
